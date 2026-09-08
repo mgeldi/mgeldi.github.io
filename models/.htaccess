@@ -1,0 +1,9 @@
+<IfModule mod_mime.c>
+    AddType model/gltf-binary .glb
+    AddCharset UTF-8 .txt
+</IfModule>
+<IfModule mod_deflate.c>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE model/gltf-binary
+    </IfModule>
+</IfModule>

@@ -1,0 +1,1045 @@
+/* Optional editorial modules. Loaded only on home, blog and technology. */
+.experience-heading {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+.experience-heading h2 {
+  font-size: clamp(29px, 3.1vw, 41px);
+  font-weight: 700;
+  line-height: 1.14;
+  max-width: 24ch;
+  text-wrap: balance;
+}
+.experience-heading .eyebrow {
+  margin-bottom: 18px;
+}
+.experience-heading > p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 47ch;
+}
+.experience-choice-group {
+  border: 0;
+  padding: 0;
+  margin: 0 0 26px;
+  min-width: 0;
+}
+.experience-choice-group legend {
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.experience-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.experience-choices label {
+  position: relative;
+  cursor: pointer;
+}
+.experience-choices label + label {
+  margin-left: -1px;
+}
+.experience-choices label > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 62px;
+  padding: 16px 20px;
+  border: 1px solid var(--ink);
+  font-weight: 600;
+  line-height: 1.4;
+  /* Selection colours change together; interpolating opposite text and
+     background colours would pass through an unreadable midpoint. */
+}
+.experience-choices input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 12px;
+  top: 12px;
+  opacity: 0;
+}
+.experience-choices input:checked + span {
+  background: var(--ink);
+  color: var(--paper);
+}
+.experience-choices input:focus-visible {
+  outline: none;
+}
+.experience-choices input:focus-visible + span {
+  outline: 3px solid #b7420c;
+  outline-offset: 4px;
+  position: relative;
+  z-index: 1;
+}
+.experience-choices label:hover input:not(:checked) + span {
+  background: var(--paper2);
+}
+.experience-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 20px;
+  max-width: 80ch;
+}
+
+.workplace-explorer {
+  border-bottom: 1px solid var(--line);
+  padding-top: 36px;
+}
+.workplace-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 70px;
+}
+.workplace-photo {
+  border: 1px solid var(--blue);
+  background: transparent;
+}
+.workplace-photo img {
+  width: 100%;
+  height: clamp(280px, 34vw, 430px);
+  object-fit: contain;
+}
+.workplace-context {
+  margin-top: 24px;
+  max-width: 48ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.workplace-context:empty {
+  display: none;
+}
+.workplace-source {
+  display: block;
+  margin-top: 22px;
+  padding-block: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  min-height: 48px;
+}
+.workplace-source:hover {
+  color: var(--blue);
+}
+.workplace-source small {
+  display: block;
+  font:
+    500 10px/1.7 Plex,
+    monospace;
+  color: var(--muted);
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+/* The right column is two framed panels — what the visitor does, and what it
+   does — in the same frame style as the photo module beside them. Everything
+   operable lives in the first one, so an editor's text in the second can never
+   move a control. */
+.workplace-result {
+  display: grid;
+  align-content: start;
+  gap: 26px;
+  min-width: 0;
+}
+.workplace-panel {
+  border: 1px solid var(--blue);
+  background: transparent;
+  min-width: 0;
+}
+.workplace-panel > .module-bar {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--muted);
+}
+.workplace-panel-body {
+  padding: clamp(16px, 1.7vw, 24px);
+}
+.workplace-result > .experience-note {
+  margin-top: 0;
+}
+.workplace-modes {
+  margin-bottom: 22px;
+}
+.workplace-modes legend {
+  margin-bottom: 12px;
+}
+.workplace-choices label > span {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-height: 54px;
+  padding: 11px 15px;
+}
+.workplace-choices small {
+  font:
+    500 10px/1.5 Plex,
+    monospace;
+}
+.workplace-mode + .workplace-mode {
+  margin-top: 28px;
+}
+.workplace-mode[hidden] + .workplace-mode {
+  margin-top: 0;
+}
+.workplace-result-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+.workplace-result-heading h3 {
+  font-family: Geist, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.workplace-result-heading .eyebrow {
+  font-size: 9px;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.workplace-mode > p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 13px 0 22px;
+  min-height: 52px;
+}
+.workplace-screen {
+  background: var(--paper);
+  border: 1px solid #b4b3ac;
+}
+.workplace-screen-top {
+  min-height: 30px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 12px 5px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.workplace-screen-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.workplace-screen-top i {
+  width: 4px;
+  height: 4px;
+  border: 1px solid #737981;
+  border-radius: 50%;
+}
+/* What just happened, in the title bar of the picture it happened in. The
+   sentence is the same one the live region carries; an empty chip is no chip. */
+.workplace-status-chip {
+  flex: 1;
+  min-width: 0;
+  border-left: 2px solid var(--lime);
+  padding: 1px 0 1px 9px;
+  color: var(--ink);
+  font:
+    500 11px/1.45 Plex,
+    monospace;
+}
+.workplace-status-chip:empty {
+  display: none;
+}
+.workplace-screen-content {
+  height: 185px;
+  position: relative;
+  overflow: hidden;
+}
+.workplace-screen-label {
+  display: block;
+  border-top: 1px solid var(--line);
+  color: var(--blue);
+  padding: 11px 14px;
+  font:
+    500 9px/1.5 Plex,
+    monospace;
+}
+.workplace-cursor-board {
+  background-image: radial-gradient(#c6c8c4 0.8px, transparent 0.8px);
+  background-size: 18px 18px;
+}
+.workplace-target {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--blue);
+  top: 36px;
+  left: 64%;
+}
+.workplace-target.is-hit {
+  background: color-mix(in srgb, var(--blue) 18%, transparent);
+  border-width: 2px;
+}
+.workplace-pointer {
+  position: absolute;
+  left: 24%;
+  top: 93px;
+  width: 25px;
+  height: 32px;
+}
+.workplace-menu {
+  position: absolute;
+  right: 18px;
+  top: 56px;
+  width: 70px;
+  padding: 6px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.workplace-menu i {
+  display: block;
+  height: 4px;
+  margin: 6px 0;
+  background: #bbbebd;
+}
+.workplace-pointer svg {
+  width: 25px;
+  height: 32px;
+  fill: var(--blue);
+  stroke: var(--paper);
+  stroke-width: 1.5px;
+}
+/* Where the click landed: one ring out of the cursor's tip and gone again. It
+   is placed by its middle, so the offsets it is given are the tip itself. */
+.workplace-click-ring {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.workplace-click-ring.is-ringing {
+  animation: workplace-ring 520ms ease-out;
+}
+@keyframes workplace-ring {
+  from {
+    transform: scale(0.35);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+.workplace-origin {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 97px;
+  left: 24%;
+  background: #676f79;
+}
+.workplace-paper {
+  width: 54%;
+  margin: 26px auto 0;
+}
+.workplace-paper > * {
+  display: block;
+  height: 5px;
+  background: #bbbebd;
+  margin-bottom: 12px;
+}
+.workplace-paper b {
+  background: var(--blue);
+  height: 11px;
+  width: 62%;
+  margin-bottom: 19px;
+}
+.workplace-paper i:nth-of-type(3n) {
+  width: 75%;
+}
+.workplace-paper em {
+  background: var(--paper2);
+  height: 66px;
+  border: 1px solid var(--line);
+}
+/* The rail along the reading edge: one tick per section of the mock page. The
+   tick being read stays marked, so the place is readable at any moment; only
+   its flash is one. */
+.workplace-sections {
+  position: absolute;
+  /* Against the mock page's own right edge — 50% + half of its 54% width — and
+     not against the far edge of the screen, so the rail belongs to the page it
+     counts the sections of. The page itself scrolls; the rail stays. */
+  left: 77%;
+  margin-left: 13px;
+  top: 26px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.workplace-sections i {
+  display: block;
+  width: 3px;
+  height: 16px;
+  background: #d2d4d0;
+}
+.workplace-sections i.is-current {
+  background: var(--lime);
+  outline: 1px solid #a9bd3c;
+}
+.workplace-sections i.is-current.is-flashing {
+  animation: workplace-tick 520ms ease-out;
+}
+@keyframes workplace-tick {
+  from {
+    transform: scaleY(0.2);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.workplace-wheel-board {
+  display: grid;
+  /* The single track is sized to the wheel and centred, so everything sharing
+     that cell — the degree readout — is placed against the wheel and not
+     against a board that is far wider than it. */
+  place-content: center;
+  place-items: center;
+}
+.workplace-wheel {
+  grid-area: 1 / 1;
+  width: 154px;
+  height: 154px;
+  stroke: var(--ink);
+  stroke-width: 7px;
+  fill: none;
+  /* A keyboard step jumps the wheel by 135°, which only reads as steering if
+     it turns. A drag is the opposite case and switches the transition off, see
+     `.is-live`. */
+  transition: transform 150ms ease-out;
+}
+/* While the knob is being dragged the wheel follows the hand from frame to
+   frame; a transition would make it lag a sixth of a second behind. */
+.workplace-wheel.is-live {
+  transition: none;
+}
+.workplace-wheel-marker {
+  stroke: var(--blue);
+  stroke-width: 9px;
+}
+/* The readout shares the wheel's grid cell instead of the board's corner: on a
+   wide screen the board is far wider than the wheel, and a number parked at its
+   edge would belong to nothing. The lower left of the cell is outside the drawn
+   rim and clear of the centred drive indicator. */
+.workplace-wheel-degrees {
+  grid-area: 1 / 1;
+  align-self: end;
+  justify-self: start;
+  color: var(--muted);
+  font:
+    500 13px/1.2 Plex,
+    monospace;
+}
+/* Gas leaves the wheel where it is, so the readout says once that the breath
+   arrived. */
+.workplace-wheel-degrees.is-pulsing {
+  animation: workplace-pulse 520ms ease-out;
+}
+@keyframes workplace-pulse {
+  0% {
+    color: var(--blue);
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.35);
+  }
+  100% {
+    color: var(--muted);
+    transform: scale(1);
+  }
+}
+.workplace-drive {
+  position: absolute;
+  inset: auto 0 12px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.workplace-drive i {
+  width: 18px;
+  height: 3px;
+  background: #bbbebd;
+}
+.workplace-drive.is-driving i {
+  animation: workplace-drive 0.6s linear infinite;
+}
+@keyframes workplace-drive {
+  from {
+    transform: translateX(-14px);
+  }
+  to {
+    transform: translateX(14px);
+  }
+}
+/* Reduced motion keeps the indicator readable without moving it: driving is
+   shown by colour alone, and the wheel jumps to its five quantised angles
+   instead of turning into them. */
+html[data-motion='reduced'] .workplace-drive.is-driving i {
+  animation: none;
+  background: var(--blue);
+}
+html[data-motion='reduced'] .workplace-wheel {
+  transition: none;
+}
+/* Reduced motion keeps every marked state and drops every moment: the current
+   tick stays lime, the readout stays put, and the click ring — which is the
+   movement itself and has no state to leave behind — is never shown at all,
+   see `showRing` in `workplace.ts`. */
+html[data-motion='reduced'] .workplace-sections i.is-current.is-flashing,
+html[data-motion='reduced'] .workplace-wheel-degrees.is-pulsing,
+html[data-motion='reduced'] .workplace-click-ring.is-ringing {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .workplace-drive.is-driving i {
+    animation: none;
+    background: var(--blue);
+  }
+  .workplace-wheel {
+    transition: none;
+  }
+  .workplace-sections i.is-current.is-flashing,
+  .workplace-wheel-degrees.is-pulsing,
+  .workplace-click-ring.is-ringing {
+    animation: none;
+  }
+}
+.workplace-joystick {
+  display: grid;
+  /* The mouthpiece takes the room it needs, the button column what is left; the
+     two stand centred against each other on one axis. */
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px 24px;
+}
+/* The stage is the only place the knob may travel in, so it keeps room for the
+   full deflection plus the knob's own radius. */
+.joystick-stage {
+  position: relative;
+  width: min(60vw, 220px);
+  height: min(60vw, 220px);
+  display: grid;
+  place-items: center;
+}
+.joystick-tube {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  /* Decoration only: every press belongs to the knob above it. */
+  pointer-events: none;
+}
+.joystick-range {
+  stroke: var(--line);
+  stroke-width: 2;
+  stroke-dasharray: 2 9;
+  stroke-linecap: round;
+}
+.joystick-arm {
+  stroke: var(--ink);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.joystick-socket {
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+.joystick-knob {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  cursor: grab;
+  /* The only element that takes the whole gesture: everything around it keeps
+     the browser's own vertical panning. */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.joystick-knob:active {
+  cursor: grabbing;
+}
+.joystick-knob:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+.joystick-knob-face {
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+.joystick-knob-face svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+}
+/* Pusten, Saugen and the example trigger the explorer slots in here are one
+   column of equal buttons, so the three of them read as one set of controls. */
+.joystick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.joystick-actions .button {
+  justify-content: center;
+  min-width: 44px;
+}
+.joystick-help {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 52ch;
+  margin-top: 4px;
+}
+
+.story-paths {
+  scroll-margin-top: 115px;
+}
+.story-path-choices {
+  grid-template-columns: repeat(var(--path-count, 3), minmax(0, 1fr));
+  margin-bottom: 36px;
+}
+.story-path-choices label > span {
+  min-height: 70px;
+}
+.story-path-choices b {
+  font-size: 22px;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+.story-path-panel {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 54px;
+}
+.story-path-panel + .story-path-panel {
+  margin-top: 45px;
+}
+.story-path-panel[hidden] + .story-path-panel {
+  margin-top: 0;
+}
+.story-path-photo {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  background: var(--paper2);
+  border: 1px solid var(--line);
+}
+.story-path-photo img {
+  width: 100%;
+  height: 390px;
+  object-fit: contain;
+}
+.story-path-photo figcaption {
+  border-top: 1px solid var(--line);
+  padding: 14px;
+  font:
+    500 10px/1.7 Plex,
+    monospace;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.story-path-copy > h3 {
+  margin-bottom: 15px;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.story-path-copy > p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 54ch;
+  margin-bottom: 25px;
+}
+.story-path-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.story-path-link {
+  display: grid;
+  grid-template-columns: 26px 1fr 20px;
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.story-path-index {
+  font:
+    500 11px/1.6 Plex,
+    monospace;
+  color: var(--blue);
+  padding-top: 2px;
+}
+.story-path-link time {
+  display: block;
+  font:
+    500 10px/1.6 Plex,
+    monospace;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.story-path-link strong {
+  display: block;
+  font:
+    700 19px/1.4 Syne,
+    sans-serif;
+  text-wrap: pretty;
+  hyphens: auto;
+}
+.story-path-link > span:last-child {
+  font-size: 21px;
+}
+.story-path-link:hover strong {
+  color: var(--blue);
+}
+.story-path-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 36px;
+}
+.story-path-footer p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 47ch;
+}
+.story-path-footer .button {
+  flex-shrink: 0;
+}
+.home-highlight {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--paper2);
+  margin-bottom: 40px;
+}
+.home-highlight img {
+  width: 150px;
+  height: 100px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.home-highlight > div {
+  min-width: 0;
+  flex: 1;
+}
+.home-highlight .eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 9px;
+}
+.home-highlight h3 {
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.home-highlight > span {
+  font-size: 27px;
+}
+.home-highlight:hover h3 {
+  color: var(--blue);
+}
+.archive-path-link {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 48px;
+  font-size: 14px;
+  margin-top: 17px;
+  color: var(--lime);
+}
+.blog-story-paths {
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1100px) {
+  .experience-heading {
+    gap: 40px;
+  }
+  .workplace-grid {
+    gap: 35px;
+  }
+  /* Below the wide layout the result column is no longer wide enough for the
+     mouthpiece and its buttons side by side, so the buttons take a row of their
+     own under the mouthpiece. */
+  .workplace-joystick {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .joystick-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .joystick-actions .button {
+    flex: 1 1 150px;
+  }
+  /* A narrower screen leaves the chip fewer characters per line, so the title
+     bar keeps its height by giving them less room each. */
+  .workplace-screen-top {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+  .workplace-status-chip {
+    padding-left: 7px;
+    font-size: 10px;
+  }
+  .workplace-result-heading {
+    flex-direction: column;
+    gap: 7px;
+  }
+  .workplace-mode > p {
+    min-height: 78px;
+  }
+  .story-path-panel {
+    gap: 32px;
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .story-path-link strong {
+    font-size: 17px;
+  }
+}
+@media (max-width: 760px) {
+  .experience-heading {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .experience-heading > p {
+    max-width: 58ch;
+  }
+  .workplace-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .workplace-device {
+    max-width: none;
+  }
+  .workplace-photo img {
+    height: 350px;
+  }
+  .workplace-context {
+    max-width: none;
+  }
+  .workplace-result-heading {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .story-path-panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .story-path-photo img {
+    height: 340px;
+  }
+  .story-path-copy > p {
+    max-width: none;
+  }
+  .story-path-choices label > span {
+    font-size: 14px;
+    padding-inline: 15px;
+  }
+}
+@media (max-width: 520px) {
+  .experience-heading {
+    margin-bottom: 28px;
+  }
+  .experience-heading h2 {
+    font-size: 29px;
+  }
+  .experience-heading > p {
+    font-size: 15px;
+  }
+  .experience-choices label > span {
+    padding: 13px;
+    font-size: 14px;
+  }
+  .workplace-photo img {
+    height: 280px;
+  }
+  .workplace-context {
+    font-size: 15px;
+  }
+  .workplace-source {
+    font-size: 14px;
+  }
+  .workplace-result-heading h3 {
+    font-size: 20px;
+  }
+  .workplace-mode > p {
+    min-height: 100px;
+  }
+  /* One button per row: three of them side by side would each fall under the
+     44 px a mouth-operated pointer needs. */
+  .joystick-actions .button {
+    flex: 1 1 100%;
+  }
+  .story-path-choices {
+    grid-template-columns: 1fr;
+    margin-bottom: 28px;
+  }
+  .story-path-choices label + label {
+    margin-left: 0;
+    margin-top: -1px;
+  }
+  .story-path-choices label > span {
+    min-height: 54px;
+    padding-inline: 18px;
+  }
+  .story-path-photo img {
+    height: 280px;
+  }
+  .story-path-photo figcaption {
+    font-size: 9px;
+  }
+  .story-path-copy > h3 {
+    font-size: 26px;
+  }
+  .story-path-copy > p {
+    font-size: 15px;
+  }
+  .story-path-link {
+    gap: 12px;
+    grid-template-columns: 20px 1fr 16px;
+  }
+  .story-path-link strong {
+    font-size: 17px;
+  }
+  .story-path-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .story-path-footer .button {
+    width: 100%;
+  }
+  .home-highlight {
+    padding: 18px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .home-highlight img {
+    width: 80px;
+    height: 80px;
+  }
+  .home-highlight:has(img) > div {
+    flex-basis: calc(100% - 100px);
+  }
+  .home-highlight > span {
+    display: none;
+  }
+  .home-highlight h3 {
+    font-family: Geist, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .home-highlight .eyebrow {
+    font-size: 8px;
+  }
+}
+@media (forced-colors: active) {
+  .experience-choices input:checked + span {
+    outline: 2px solid Highlight;
+    outline-offset: -4px;
+    color: Highlight;
+  }
+  .workplace-pointer svg {
+    fill: CanvasText;
+  }
+  .workplace-wheel {
+    stroke: CanvasText;
+  }
+  .workplace-wheel-degrees {
+    color: CanvasText;
+  }
+  .workplace-target.is-hit {
+    border-color: Highlight;
+  }
+  .workplace-status-chip {
+    color: CanvasText;
+    border-color: Highlight;
+  }
+  .workplace-click-ring {
+    border-color: Highlight;
+  }
+  .workplace-sections i {
+    background: GrayText;
+  }
+  .workplace-sections i.is-current {
+    background: Highlight;
+    outline-color: Highlight;
+  }
+  .workplace-menu {
+    background: Canvas;
+    border-color: CanvasText;
+  }
+  .workplace-menu i,
+  .workplace-drive i {
+    background: CanvasText;
+  }
+  .workplace-drive.is-driving i {
+    background: Highlight;
+  }
+  .joystick-knob {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+  .joystick-knob:focus-visible {
+    outline-color: Highlight;
+  }
+  .joystick-arm,
+  .joystick-socket {
+    stroke: CanvasText;
+  }
+  .joystick-range {
+    stroke: GrayText;
+  }
+}
+@media print {
+  /* Everything operable is in the first frame, so on paper the whole frame
+     goes and the second one is left to show the examples. */
+  .experience-choice-group,
+  [data-workplace-panel='input'] {
+    display: none;
+  }
+  [data-workplace-panel='effect'] {
+    break-inside: avoid;
+  }
+  .story-path-panel {
+    break-inside: avoid;
+  }
+}

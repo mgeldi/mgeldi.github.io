@@ -1,0 +1,1 @@
+function e(e){return e.toLocaleLowerCase(`de-DE`).replace(/ß/g,`ss`).normalize(`NFKD`).replace(/\p{M}/gu,``).replace(/[^\p{L}\p{N}]+/gu,` `).trim()}function t(t,n){return e(n).split(/\s+/).every(e=>t.includes(e))}export{e as n,t};

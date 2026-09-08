@@ -1,0 +1,17 @@
+Mundstück in 3D — Quellen und Lizenz
+
+Originalmodell: QuadStick / Fred Davison
+Titel: mouthpiece 3 hole narrow.stl
+Quelle: https://github.com/QuadStick/Hardware/blob/c3cd3d8bd8b72c8944b8538e65987d5d138797a1/3D/Mouthpieces/mouthpiece%203%20hole%20narrow.stl
+Commit: c3cd3d8bd8b72c8944b8538e65987d5d138797a1
+Original-SHA256: 10ccc37c2133ada0305d2d6eeed606d3af59f3d1b8763f22b32dc38b0ba93934
+
+Originaldatei: source/mouthpiece-3-hole-narrow.stl
+Webmodell: quadstick-mouthpiece.glb
+Lizenz für Original und Webmodell: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+Vollständige mitgelieferte Lizenz: LICENSE-QuadStick.txt
+
+Bearbeitung für diese Website: Das Dreiecksnetz wurde zentriert, von Millimetern in Meter skaliert und in GLB umgewandelt. Identische Position-/Normalenpaare wurden zusammengefasst. Alle ursprünglichen Dreiecke und Flächennormalen bleiben erhalten. Ein blaues Material dient der Darstellung; es ist keine Aussage zur Farbe des physischen Produkts. Keine zusätzlichen Bauteile wurden modelliert. Die Bearbeitung steht ebenfalls unter CC BY-SA 4.0.
+
+Gezeigt wird ein dreilöchriges Mundstück aus dem Hersteller-Repository. Es ist kein vollständiges Modell des QuadStick und keine bestätigte Maßaufnahme von Robins persönlichem Mundstück.
