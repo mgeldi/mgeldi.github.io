@@ -1,8 +1,12 @@
 {
-  "sourceCommit": "c2a74eaf95a0fd2803f7ac4d6664c8f13bf5efac",
-  "builtAt": "2026-09-12T18:11:19.079Z",
-  "revision": 1789234522,
-  "pages": 133,
+  "sourceCommit": "b715328bfb2494941411c8c2ac5da0ce2ae473ae",
+  "builtAt": "2026-09-12T19:19:10.731Z",
+  "revision": 1789240255,
+  "pages": 134,
   "eventDemo": "never-give-up-wiesbaden-2026",
+  "eventDemos": [
+    "never-give-up-wiesbaden-2026",
+    "never-give-up-wiesbaden-2026-10-31"
+  ],
   "mode": "static-preview"
 }
