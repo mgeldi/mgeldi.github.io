@@ -1185,6 +1185,28 @@ main:focus {
 .footer-bottom nav a:hover {
   color: var(--lime);
 }
+/* Two more lines of small print. „Etwas aufgefallen?“ rides in the copyright
+   line and the credit closes the row; both keep the 44 px hit box of the legal
+   links without growing the 11 px line they stand in. */
+.footer-report,
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-block: -16px;
+  font-size: 11px;
+  color: var(--dark-muted);
+}
+.footer-report {
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid var(--dark-line);
+}
+.footer-report:hover,
+.footer-credit:hover {
+  color: var(--lime);
+}
 /* Interior pages and the complete archive */
 .page-hero {
   padding-block: 65px 75px;
@@ -3359,6 +3381,12 @@ label:not(.search-field):not(.year-field):not(.topic-option):not(.filter-chip) {
   .footer-bottom nav a {
     font-size: 10px;
     min-height: 40px;
+  }
+  .footer-report,
+  .footer-credit {
+    font-size: 10px;
+    min-height: 40px;
+    margin-block: -14px;
   }
   .page-hero {
     padding-block: 42px 50px;
