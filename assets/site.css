@@ -1064,6 +1064,16 @@ main:focus {
 .support-contact-band h2 {
   margin-bottom: 14px;
 }
+/* The question band on /technik/ carries one line under its heading and a row
+   of topic choices that may wrap under it. */
+.technik-band .wrap > div {
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.technik-band h2 {
+  margin-bottom: 14px;
+}
+.technik-band .wrap > div > div > p,
 .support-contact-band .wrap > div > div > p {
   color: var(--dark-muted);
   font-size: 17px;
@@ -1098,6 +1108,14 @@ main:focus {
 }
 .footer-cta .button-row {
   margin-top: 18px;
+  gap: 10px;
+}
+/* Three buttons share the call-to-action column since the donate button joined
+   them (2026-09-22). Slightly tighter padding keeps them on one line at 1440px,
+   where the column is about 540px wide; the hit boxes stay 52px tall. */
+.footer-cta .button {
+  padding-inline: 18px;
+  gap: 16px;
 }
 .footer-headline {
   font:
